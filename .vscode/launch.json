@@ -8,9 +8,9 @@
       "program": "${workspaceFolder}/parallel_scraper.py",
       "console": "integratedTerminal",
       "env": {
-          "twitter_username": "fresher_payel",
-          "twitter_password": "humberthumberT@911",
-          "email": "lavenderlush911@gmail.com"
+          "twitter_username": "username",
+          "twitter_password": "password",
+          "email": "email"
       }
     }
   ]
