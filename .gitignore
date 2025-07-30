@@ -1,0 +1,13 @@
+# Ignore the secrets folder to protect API keys and credentials
+secrets/.env
+parallel_scraper.py
+.vscode/
+tweets_1
+tweets
+language_detector.py
+run_script.py
+sent_analyzer.py
+run_script.bat
+venv/
+__pycache__
+*.pyc
