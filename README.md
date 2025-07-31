@@ -38,6 +38,12 @@ This initial phase focused on creating a high-quality, labeled dataset, which is
 
 The final labeled dataset is the primary deliverable of this phase and is ready for model training.
 
+## Preliminary Insights (EDA)
+
+Even before model training, the labeled data reveals fascinating patterns. The distribution of narratives shows a conversation dominated by 'Hype & Social Sentiment', while the relationship between author influence and tweet engagement varies significantly across different narrative types.
+
+![.](plots/engagement_vs_follower__count.png)
+![.](plots/distribution_of_narrative_category.png)
 
 ## Next Steps: Phase 2 (Model Training & Evaluation)
 
