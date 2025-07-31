@@ -27,7 +27,6 @@ print(language_processed_df.head())
 
 # --- Configuration ---
 API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-mnli"
-# IMPORTANT: Paste your Hugging Face API key here
 HF_API_KEY = os.getenv("hf_token")
 if not HF_API_KEY:
     raise ValueError("Hugging Face API key not found. Please set 'hf_token' in your .env file.")
@@ -66,7 +65,7 @@ def classify_tweet(tweet_text):
     
 # --- Main Labeling Logic ---
 
-# Apply the classification function to each tweet
+# To apply the classification function to each tweet
 # We add a sleep(1) between each request to respect the API rate limits of the free tier.
 print("Starting tweet labelling...")
 if 'tweet_english' not in language_processed_df.columns:
