@@ -197,7 +197,7 @@ class scraping:
                         tweet_ids.append(tweet_id)
                         Tweets.append(" ".join(Tweet.split()))
                         follower_counts.append(follower_count)
-                        #TimeStamps.append(TimeStamp)
+                        TimeStamps.append(TimeStamp)
                         UserTags.append(UserTag.text)
 
                 except Exception:
@@ -249,8 +249,8 @@ class scraping:
             print("No tweets found meeting the criteria in the given interval.")
             return None
 
-        df = pd.DataFrame(zip(UserTags, follower_counts, Tweets, tweet_ids),
-                        columns=['UserTags', 'follower_counts', 'Tweets', 'tweet_ids'])
+        df = pd.DataFrame(zip(UserTags, follower_counts, TimeStamps Tweets, tweet_ids),
+                        columns=['UserTags', 'follower_counts', 'TimeStamps', 'Tweets', 'tweet_ids'])
         now = datetime.now()
         current_time = now.strftime("%Y-%m-%d_%H-%M-%S")
         file_path = os.path.join(self.folder_path, f"{current_time}_tweets_{len(UserTags)}.csv")
