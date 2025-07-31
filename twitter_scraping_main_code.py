@@ -22,7 +22,7 @@ from selenium.common.exceptions import (
     NoSuchElementException,
     StaleElementReferenceException,
     WebDriverException,
-    TimeoutException  # Added TimeoutException
+    TimeoutException  
 )
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -58,7 +58,7 @@ class scraping:
         browser_option.add_argument("--headless")  # Uncomment if you want headless mode
         browser_option.add_argument(f"--user-agent={header}")
 
-        # --- NEW STEALTH OPTIONS ---
+        # --- STEALTH OPTIONS ---
         browser_option.add_experimental_option("excludeSwitches", ["enable-automation"])
         browser_option.add_experimental_option('useAutomationExtension', False)
         # --- END NEW ---
@@ -79,7 +79,7 @@ class scraping:
         return self.driver
     
     def login_(self):
-        # Your login logic is excellent, no changes needed here.
+        
         self.driver.get("https://x.com/i/flow/login")
         WebDriverWait(self.driver, 10).until(
             lambda d: d.find_elements(By.XPATH, "//input[@autocomplete='username']")
@@ -114,7 +114,7 @@ class scraping:
         return self.driver
     
     def logout_session(self):
-        # Your logout logic is excellent, no changes needed.
+        
         if not hasattr(self, 'driver') or not self.driver.service.is_connectable():
             print("Driver not initialized or already closed.")
             return
@@ -135,10 +135,7 @@ class scraping:
         return
     
     def stage_one_scraper(self):
-        """
-        Scrapes the 'Latest' tweets feed with an efficient scrolling method and
-        stochastic human-like interactions (liking/retweeting) to avoid bot detection.
-        """
+        
         try:
             self.driver.get(f"https://x.com/search?q={self.subject}&src=typed_query&f=live")
             WebDriverWait(self.driver, 15).until(lambda d: d.find_elements(By.XPATH, "//article[@data-testid='tweet']"))
@@ -221,7 +218,7 @@ class scraping:
                 stuck_counter = 0
             last_position = current_position
 
-            # --- NEW: Stochastic Human Interaction Logic ---
+            # --- Stochastic Human Interaction Logic ---
             # 3% chance to perform an interaction to appear more human
             if random.random() < 0.03: 
                 try:
@@ -261,13 +258,13 @@ class scraping:
         print(f"CSV Saved: {file_path} with {len(df)} tweets.")
         
         return file_path    
-    def stage_two_scraper(self, file_path_to_revisit): # CRITICAL FIX: Accept file path as argument
+    def stage_two_scraper(self, file_path_to_revisit): # Accept file path as argument
         print("In stage two scraper...")
         if file_path_to_revisit is None:
             print("No file path provided from Stage 1. Skipping Stage 2.")
             return None
             
-        df = pd.read_csv(file_path_to_revisit) # CRITICAL FIX: Use the argument
+        df = pd.read_csv(file_path_to_revisit) # Use the argument
         tweet_ids, usertags = df['tweet_ids'].tolist(), df['UserTags'].tolist()
         retweets, delayedTimeStamps = [], []
         
@@ -284,9 +281,8 @@ class scraping:
                 
                 retweet_raw = self.driver.find_element(By.XPATH, ".//button[@data-testid='retweet']").text
                 retweet = retweet_raw.replace(',', '').upper()
-                if retweet == '': retweet = '0'
-                # ... (your retweet parsing logic is fine) ...
-                
+                if retweet == '': 
+                    retweet = '0'
                 retweets.append(retweet)
                 delayedTimeStamps.append(self.driver.find_element(By.XPATH,".//time").get_attribute('datetime'))
             except Exception as e:
@@ -299,7 +295,7 @@ class scraping:
         df['creationTimeStamps_UTC'] = delayedTimeStamps
         print("Retweet count and creation timestamps added to the DataFrame.")
 
-        updated_file_path = file_path_to_revisit.replace('.csv', '_updated.csv') # CRITICAL FIX
+        updated_file_path = file_path_to_revisit.replace('.csv', '_updated.csv') 
         df.to_csv(updated_file_path, index=False, encoding="utf-8-sig")
         print(f"Updated csv Saved: {updated_file_path}")
         return updated_file_path
