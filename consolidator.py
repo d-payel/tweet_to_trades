@@ -13,11 +13,11 @@ all_tweets_df = pd.concat(
     ignore_index=True
 )
 
-# Optional: Drop duplicates based on tweet_id or tweet text
+# Drop duplicates based on tweet_id or tweet text
 all_tweets_df.drop_duplicates(subset=['tweet_ids'], inplace=True)
 
 # Save the consolidated file
 consolidated_path = os.path.join(folder_path, "all_consolidated_tweets.csv")
 all_tweets_df.to_csv(consolidated_path, index=False, encoding='utf-8-sig')
 
-print(f"✔️ Consolidation complete. File saved at:\n{consolidated_path}")
+print(f"Consolidation complete. File saved at:\n{consolidated_path}")
