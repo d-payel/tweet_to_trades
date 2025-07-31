@@ -1,4 +1,4 @@
-# Bitcoin Narrative Component Analysis with NLP
+# Bitcoin Narrative Component Analysis
 
 ### Project Status: Phase 1 Complete (Data Engineering & Automated Labeling)
 
