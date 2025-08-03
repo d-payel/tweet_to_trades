@@ -51,7 +51,7 @@ The next phase of this project will focus on building and evaluating machine lea
 
 -   **Model Training:** Train a suite of classifiers (Naive Bayes, **SVM**, **XGBoost**) on the labeled dataset using TF-IDF text features.
 -   **Evaluation:** Compare model performance using robust metrics like the F1-score and confusion matrices.
--   **Final Goal:** Create a production-ready model that can take any new tweet about Bitcoin and instantly assign it a narrative label, providing a real-time stream of qualitative market intelligence.
+-   **Final Goal:** Create a model that can take any new tweet about Bitcoin and instantly assign it a narrative label, providing a real-time stream of qualitative market intelligence.
 
 ## How to Run This Project
 
