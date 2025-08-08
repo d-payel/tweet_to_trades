@@ -47,7 +47,6 @@ The final labeled dataset is the primary deliverable of this phase and is ready 
 Even before model training, the labeled data reveals fascinating patterns. The distribution of narratives shows a conversation dominated by 'Hype & Social Sentiment', while the relationship between author influence and tweet engagement varies significantly across different narrative types.
 
 ![.](plots/engagement_vs_follower__count.png)
-![.](plots/distribution_of_narrative_category.png)
 
 ## Phase 2: From EDA to a Champion Model
 
@@ -60,7 +59,7 @@ Before modeling, it was critical to validate that the narrative categories were 
 <!-- Insert your new composite image here. e.g., plots/word_freq_comparison.png -->
 | Top 20 words for "FUD or Scam"               | Top 20 words for Top 20 words for "Technical Analysis"| Top 20 words for Top 20 words for "Regulatory or Geopolitical"|               
 | -------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------- |
-| ![fud](plots/fud_final.png)                  | ![hype](plots/hype_final.png)                         | ![hype](plots/geo_Regu_final.png)                             |
+| ![fud](plots/fud_final.png)                  | ![hype](plots/tech.png)                         | ![hype](plots/geo_Regu_final.png)                             |
 
 
 The analysis revealed:
@@ -102,7 +101,7 @@ The final champion model is the LightGBM pipeline using SMOTE with the tuned hyp
 The key takeaway is a lesson in the trade-offs of machine learning. The analysis conclusively shows that the overfitting gap is a direct, measurable artifact of using a synthetic oversampling strategy on a dataset with very small, low-signal minority classes. The 0.70 F1-score represents the best achievable performance with the current data and feature set.
 
 <!-- Insert your final, best Confusion Matrix here. e.g., plots/final_confusion_matrix.png -->
-![Final Confusion Matrix](plots/final_confusion_matrix.png)
+![Final Confusion Matrix](plots/lgbm_confusion_matrix.png)
 
 
 ### Future Work
