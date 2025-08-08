@@ -57,9 +57,9 @@ With the labeled dataset in hand, Phase 2 focused on training, evaluating, and r
 Before modeling, it was critical to validate that the narrative categories were textually distinct. A word frequency analysis was performed on the cleaned text for each class, which yielded crucial insights and helped to set realistic expectations.
 
 <!-- Insert your new composite image here. e.g., plots/word_freq_comparison.png -->
-| Top 20 words for "FUD or Scam"               | Top 20 words for Top 20 words for "Technical Analysis"| Top 20 words for Top 20 words for "Regulatory or Geopolitical"|               
+| Top 20 words for  FUD or Scam                | Top 20 words for Top 20 words for Technical Analysis  | Top 20 words for Top 20 words for  Regulatory or Geopolitical |               
 | -------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------- |
-| ![fud](plots/fud_final.png)                  | ![hype](plots/tech.png)                         | ![hype](plots/geo_Regu_final.png)                             |
+| ![fud](plots/fud.png)                        | ![hype](plots/tech.png)                               | ![hype](plots/geo.png)                                        |
 
 
 The analysis revealed:
@@ -101,7 +101,9 @@ The final champion model is the LightGBM pipeline using SMOTE with the tuned hyp
 The key takeaway is a lesson in the trade-offs of machine learning. The analysis conclusively shows that the overfitting gap is a direct, measurable artifact of using a synthetic oversampling strategy on a dataset with very small, low-signal minority classes. The 0.70 F1-score represents the best achievable performance with the current data and feature set.
 
 <!-- Insert your final, best Confusion Matrix here. e.g., plots/final_confusion_matrix.png -->
-![Final Confusion Matrix](plots/lgbm_confusion_matrix.png)
+|Best Confusion Matrix                                     |
+|----------------------------------------------------------|
+|![Final Confusion Matrix](plots/lgbm_confusion_matrix.png)|
 
 
 ### Future Work
